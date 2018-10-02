@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class BuildingManagerAccess {
     [SerializeField] BuildingManager buildingManager;
@@ -11,4 +12,8 @@ public class BuildingManagerAccess {
         buildingManager.OnSelectItem(selectableObject.transform);
     }
 
+    internal void Build(int turretId, Vector3 position) {
+        Transform turret = buildingManager.turrets.Build(turretId, position);
+        GameManager.Instance.units.RegisterTurret(SelectableObject.lastSelected, turret);
+    }
 }

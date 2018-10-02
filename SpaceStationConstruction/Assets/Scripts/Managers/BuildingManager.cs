@@ -1,24 +1,29 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
+
 public class BuildingManager : MonoBehaviour {
 
-    SelectableObject selectedItem;
+    SelectableObject selectedItem { get { return SelectableObject.lastSelected; } set { SelectableObject.lastSelected = value; } }
+
+    public TurretBuilding turrets;
 
     private void Update() {
         GetCurrentSelection();
         //Debug.Assert(selectedItem != null, "NULL selected item, select something.");
         if (selectedItem != null) {
-            GameManager.Instance.ui.ShowUI(selectedItem.selectionType.ToString());
+            GameManager.Instance.ui.ShowUI(selectedItem.selectionType.ToString(), selectedItem.transform.position);
         }
     }
+
 
     private void GetCurrentSelection() {
         if (Input.GetMouseButtonDown(0)) { // if left button pressed...
-            GetHovered();
+            GetHoveredOrDeselect();
         }
     }
 
-    private void GetHovered() {
+    private void GetHoveredOrDeselect() {
         // Note: requires collision.
         Camera camera = Camera.main;
         Vector3 ray = camera.ScreenToWorldPoint(Input.mousePosition);
@@ -26,6 +31,8 @@ public class BuildingManager : MonoBehaviour {
         if (hit.transform != null) {
             if (SelectionFilter(hit.transform))
                 OnSelectItem(hit.transform);
+        } else {
+            //selectedItem = null;
         }
     }
 
@@ -39,6 +46,7 @@ public class BuildingManager : MonoBehaviour {
     }
 
     public void OnSelectItem(Transform t) {
-        selectedItem = t.GetComponent<SelectableObject>();
+        SelectableObject.lastSelected = t.GetComponent<SelectableObject>();
     }
+
 }

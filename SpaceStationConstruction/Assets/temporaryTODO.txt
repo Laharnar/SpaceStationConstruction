@@ -1,0 +1,11 @@
+﻿goal --- fully functional prototype with minimal gameplay
+- including, buidling, enemy waves and units, ally turrets, addons, modules, 
+quests.
+test spawning of units, in a large square wave ok
+    then add turrets, with shots, tracking enemies
+    then enemy units that attack
+    then modules
+    then outline a 5 step quest
+    then add instalations
+    add science tree with 5 items
+    add save
