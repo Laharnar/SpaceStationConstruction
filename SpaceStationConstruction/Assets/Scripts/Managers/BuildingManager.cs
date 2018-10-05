@@ -11,15 +11,21 @@ public class BuildingManager : MonoBehaviour {
     private void Update() {
         GetCurrentSelection();
         //Debug.Assert(selectedItem != null, "NULL selected item, select something.");
-        if (selectedItem != null) {
-            GameManager.Instance.ui.ShowUI(selectedItem.selectionType.ToString(), selectedItem.transform.position);
-        }
+        
     }
 
 
     private void GetCurrentSelection() {
         if (Input.GetMouseButtonDown(0)) { // if left button pressed...
             GetHoveredOrDeselect();
+
+            // open ui
+            if (selectedItem != null) {
+                string additionalTag = "";
+                if (GameManager.Instance.building.TurretExists(selectedItem))
+                    additionalTag += "_builtTower";
+                GameManager.Instance.ui.ShowUI(selectedItem.selectionType.ToString() + additionalTag, selectedItem.transform.position);
+            }
         }
     }
 

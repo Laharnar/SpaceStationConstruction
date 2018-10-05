@@ -10,6 +10,7 @@ public enum SelectionType {
 /// <remarks>This is a bit of a funny thing.</remarks>
 public class SelectableObject:MonoBehaviour {
 
+    // last selected is different than this, because this can also act as a manager.
     public static SelectableObject lastSelected;
 
     public SelectionType selectionType;
@@ -22,6 +23,7 @@ public class SelectableObject:MonoBehaviour {
     }
 
     public void BuildTurret(int turretId) {
-        GameManager.Instance.building.Build(turretId, lastSelected.transform.position);
+        GameManager.Instance.building.Build(turretId, lastSelected.transform.position
+            , lastSelected.transform);
     }
 }

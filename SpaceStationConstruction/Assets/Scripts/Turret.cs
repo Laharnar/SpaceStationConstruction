@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-
 public class Turret:MonoBehaviour {
-    float time;
+    public GunInfo gun;
     public TurretData data;
-    public Transform spawnPoint;
 
     Coroutine behaviour;
 
@@ -27,16 +25,11 @@ public class Turret:MonoBehaviour {
     }
 
     public void Aim() {
-        Transform t = GameManager.Instance.targeting.GetClosest((Vector2)transform.position);
+        Transform t = GameManager.Instance.targeting.GetClosestTarget((Vector2)transform.position);
         if (t!= null) {
             transform.up = t.position - transform.position;
         }
     }
 
-    public void Shoot() {
-        if (Time.time > time) {
-            time = data.fireRate + Time.time;
-            GameManager.Instance.bullets.SpawnBullet(data, spawnPoint);
-        }
-    }
+    
 }

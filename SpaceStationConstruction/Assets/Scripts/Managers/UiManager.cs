@@ -11,24 +11,32 @@ public class UiManager : MonoBehaviour {
     }
 
     public void ShowUI(string tag, Vector3 pos) {
+        Debug.Log("[SHOWING UI]");
+        activeUI = tag;
         for (int i = 0; i < tags.Length; i++) {
+            Debug.Log("Comparing tag" + tag + " "+tags[i] + " ui set to "+ (tag == tags[i]) + " "+ui[i]);
+
             if (tag == tags[i]) {
-                if (i < ui.Length) {
+                if (ui[i] != null) {
+
                     ui[i].gameObject.SetActive(true);
+
                     ui[i].transform.position = pos;
                 }
             } else {
-                if (i < ui.Length) {
+                if (ui[i] != null) {
                     ui[i].gameObject.SetActive(false);
                 }
             }
         }
-        activeUI = tag;
     }
 
     public void HideUI() {
+        Debug.Log("[HIDING UI]");
         for (int i = 0; i < ui.Length; i++) {
-            ui[i].gameObject.SetActive(false);
+            if (ui[i])
+                ui[i].gameObject.SetActive(false);
         }
+        activeUI = "";
     }
 }

@@ -15,8 +15,17 @@ public class Bullet:MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.transform.GetComponent<Fighter>()) {
             Fighter f = other.transform.GetComponent<Fighter>();
-            GameManager.Instance.turretBehaviour.ApplyDmg(stats.damage, f);
-            Destroy(gameObject);
+            if (f.data.stats.alliance != stats.alliance) {
+                GameManager.Instance.fighterBehaviour.ApplyDmg(stats.damage, f);
+                Destroy(gameObject);
+            }
+        }
+        if (other.transform.GetComponent<StationModule>()) {
+            StationModule f = other.transform.GetComponent<StationModule>();
+            if (f.stats.alliance != stats.alliance) {
+                GameManager.Instance.fighterBehaviour.ApplyDmg(stats.damage, f);
+                Destroy(gameObject);
+            }
         }
     }
 }

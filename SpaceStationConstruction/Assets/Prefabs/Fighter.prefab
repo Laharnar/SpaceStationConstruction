@@ -128,9 +128,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d170bd50401e70e4eb2a51f4e7d6b679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shields: 0
-  health: 1
-  armor: 1
+  gun:
+    spawnPoint: {fileID: 4501693674120286}
+  data:
+    shields: 0
+    health: 1
+    armor: 1
+    flySpeed: 1
+    rotationSpeed: 30
+    shooting:
+      bulletPref: {fileID: 4982134147376924, guid: 030d931d4b5d9384da4cee04887e5bbd,
+        type: 2}
+      fireRate: 0.4
+  rig: {fileID: 50624395204527316}
 --- !u!212 &212906797195046140
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -165,7 +175,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 35
   m_Sprite: {fileID: 21300000, guid: b4929386966645f4b869037f740fdbfe, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0

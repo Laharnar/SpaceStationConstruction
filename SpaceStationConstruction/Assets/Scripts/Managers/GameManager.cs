@@ -11,6 +11,7 @@ public class GameManager:MonoBehaviour {
     public BulletAccess bullets;
     public Targeting targeting;
     public TurretHandling turretBehaviour;
+    public FighterHandling fighterBehaviour;
 
     public static GameManager Instance {
         get {
@@ -28,6 +29,7 @@ public class GameManager:MonoBehaviour {
                     instance.bullets = new BulletAccess();
                     instance.turretBehaviour = new TurretHandling();
                     instance.targeting = new Targeting();
+                    instance.fighterBehaviour = new FighterHandling();
                 }
             }
             return instance;

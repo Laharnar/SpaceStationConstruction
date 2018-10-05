@@ -7,8 +7,17 @@ public class UnitList {
     List<Transform> turrets = new List<Transform>();
 
     public void RegisterTurret(SelectableObject selected, Transform t) {
+        Debug.Log("[REGISTER TURRET]"+selected + " " + t);
         slots.Add(selected);
         turrets.Add(t);
     }
 
+    public bool Exists(Transform turret) {
+        for (int i = 0; i < turrets.Count; i++) {
+            if (turrets[i].gameObject == turret.gameObject) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

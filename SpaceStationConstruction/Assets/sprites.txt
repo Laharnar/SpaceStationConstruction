@@ -1,0 +1,7 @@
+﻿all layers are inclusive on both values
+Background 1-5
+Modules: 15-19
+Addons : 20-24
+Bullets : 25-29
+Turrets: 30-34
+Fighter, enemy ally units: 35-39
