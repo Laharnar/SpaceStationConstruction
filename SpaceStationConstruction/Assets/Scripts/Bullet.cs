@@ -9,7 +9,7 @@ public class Bullet:MonoBehaviour {
     }
 
     private void Update() {
-        rig.MovePosition(transform.position+transform.up);
+        rig.MovePosition(transform.position+transform.up*Time.deltaTime*stats.speed);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

@@ -1,0 +1,3 @@
+﻿interface IDestructible {
+    void OnDestroyed();
+}

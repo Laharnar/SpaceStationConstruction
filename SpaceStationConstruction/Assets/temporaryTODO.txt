@@ -3,9 +3,19 @@
 quests.
 test spawning of units, in a large square wave ok
     then add turrets, with shots, tracking enemies ok
-    then enemy units that attack
-    then modules
-    then outline a 5 step quest
-    then add instalations
-    add science tree with 5 items
-    add save
+    then enemy units that attack ok
+    then modules ok
+    then outline a 5 step quest, for modules. skip
+    then add instalations(build ok +effect skip)
+    add science tree with 5 items -- optional skip
+    add save progress skip
+
+how do i build an addon? maybe have sprite settings, and effect.
+effects aren't defined atm, and are optional.
+
+Goal: testing gameplay... what can i do with this?
+hp bars
+upgrades for specific parts
+barriers(reflectors)
+slow a bit
+then outline a 5 step quest, for modules.

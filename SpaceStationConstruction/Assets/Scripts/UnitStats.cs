@@ -1,6 +1,5 @@
 ﻿
 using UnityEngine;
-
 [System.Serializable]
 public class UnitStats {
     public int alliance = 0;
@@ -12,9 +11,10 @@ public class UnitStats {
         shields = nextShield;
     }
 
-    internal void SetHp(int nextHp, GameObject source) {
+    internal void SetHp(int nextHp, GameObject source, IDestructible destructibleSource) {
         health = nextHp;
         if (health <= 0) {
+            destructibleSource.OnDestroyed();
             GameObject.Destroy(source);
         }
     }

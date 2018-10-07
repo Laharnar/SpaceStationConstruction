@@ -20,8 +20,11 @@ public class Turret:MonoBehaviour {
         }
     }
 
-    public void Aim(Vector2 point) {
-        transform.up = point - (Vector2)transform.position;
+    public void Aim(Vector2 point, Vector2 predictionDir) {
+        if (false) {
+            transform.up = point - (Vector2)transform.position;
+        }
+        transform.up = (point + predictionDir) - (Vector2)transform.position;
     }
 
     public void Aim() {

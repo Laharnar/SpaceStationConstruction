@@ -3,7 +3,6 @@
 public enum SelectionType {
     Module, Fighter, Turret, Addon
 }
-
 /// <summary>
 /// 
 /// </summary>
@@ -21,9 +20,5 @@ public class SelectableObject:MonoBehaviour {
     public void SelectSelf() {
         GameManager.Instance.building.Select(lastSelected);
     }
-
-    public void BuildTurret(int turretId) {
-        GameManager.Instance.building.Build(turretId, lastSelected.transform.position
-            , lastSelected.transform);
-    }
+    
 }

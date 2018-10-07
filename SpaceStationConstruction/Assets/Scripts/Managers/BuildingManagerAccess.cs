@@ -22,7 +22,11 @@ public class BuildingManagerAccess {
         buildingManager.OnSelectItem(selectableObject.transform);
     }
 
-    internal void Build(int turretId, Vector3 position, Transform parent) {
+    internal void BuildAddon(int i, Vector3 position, object p) {
+        Debug.Log("[BUILD] addon, todo");
+    }
+
+    internal void BuildTurret(int turretId, Vector3 position, Transform parent) {
         Debug.Log("[BUILD] turret built, ui should close");
         Transform turret = buildingManager.turrets.Build(turretId, position);
         turret.parent = parent;
@@ -33,9 +37,6 @@ public class BuildingManagerAccess {
         Debug.Log("changeUI "+curUI + " to "+ "+_buildTower");
         GameManager.Instance.ui.HideUI();
         //GameManager.Instance.ui.ShowUI(curUI+ "_builtTower", SelectableObject.lastSelected.transform.position);
-
-
-
     }
     
 }

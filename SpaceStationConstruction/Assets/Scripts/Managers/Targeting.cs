@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 public class Targeting {
-    List<Transform> targets = new List<Transform>();
+    List<Transform> fighters= new List<Transform>();
     List<Transform> modules = new List<Transform>();
+
+    List<Fighter> fighterScripts = new List<Fighter>();
+
+    public List<Fighter> Fighters { get { return fighterScripts; } }
 
     internal void DeRegister(StationModule stationModule) {
         modules.Remove(stationModule.transform);
@@ -11,7 +15,8 @@ public class Targeting {
 
     // Note: register functions should be called from awake.
     public void Register(Fighter target) {
-        targets.Add(target.transform);
+        fighters.Add(target.transform);
+        fighterScripts.Add(target);
     }
     public void Register(StationModule target) {
         modules.Add(target.transform);
@@ -30,7 +35,7 @@ public class Targeting {
     }
 
     public Transform GetClosestTarget(Vector2 position) {
-        return GetClosest(position, targets);
+        return GetClosest(position, fighters);
     }
 
     public Transform GetClosestModule(Vector3 position) {
@@ -38,6 +43,7 @@ public class Targeting {
     }
 
     internal void DeRegister(Fighter fighter) {
-        targets.Remove(fighter.transform);
+        fighters.Remove(fighter.transform);
+        fighterScripts.Remove(fighter);
     }
 }

@@ -131,16 +131,19 @@ MonoBehaviour:
   gun:
     spawnPoint: {fileID: 4501693674120286}
   data:
-    shields: 0
-    health: 1
-    armor: 1
-    flySpeed: 1
-    rotationSpeed: 30
+    stats:
+      alliance: 0
+      shields: 0
+      health: 3
+      armor: 0
+    flySpeed: 8
+    rotationSpeed: 2
     shooting:
       bulletPref: {fileID: 4982134147376924, guid: 030d931d4b5d9384da4cee04887e5bbd,
         type: 2}
-      fireRate: 0.4
+      fireRate: 0.8
   rig: {fileID: 50624395204527316}
+  aiState: 
 --- !u!212 &212906797195046140
 SpriteRenderer:
   m_ObjectHideFlags: 1

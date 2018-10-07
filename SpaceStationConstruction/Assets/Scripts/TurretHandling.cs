@@ -21,7 +21,7 @@ public class TurretHandling {
             yield return null;
         }
         while (target != null) {
-            turret.Aim(target.position);
+            turret.Aim(target.position, target.GetComponent<Fighter>().MovePrediction);
             turret.gun.Shoot(turret.data);
             yield return null;
         }
