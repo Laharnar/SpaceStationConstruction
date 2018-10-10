@@ -19,3 +19,7 @@ upgrades for specific parts
 barriers(reflectors)
 slow a bit
 then outline a 5 step quest, for modules.
+
+nested prefabs template
+temporary object, replaced with a pref on runtime.
+Also adds a nice control over how the stuff is added.

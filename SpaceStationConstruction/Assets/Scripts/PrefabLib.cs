@@ -1,7 +1,6 @@
 ﻿
 using System;
 using UnityEngine;
-
 [CreateAssetMenu(fileName = "PrefabLib", menuName = "Data/PrefabLib", order = 1)]
 public class PrefabLib : ScriptableObject {
     public Transform[] prefabs;
