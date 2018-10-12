@@ -23,3 +23,28 @@ then outline a 5 step quest, for modules.
 nested prefabs template
 temporary object, replaced with a pref on runtime.
 Also adds a nice control over how the stuff is added.
+
+
+1 cycle.
+NOTE: as far as quests go... do they decide the build path, or
+content amount?
+
+modules cycle > load quest+ui > start button > execute quest 
+> end quest(get results)
+light, medium, heavy fighter... for now.
+quest variations: figure those out. just have a 5 build step quest line
+for now.
+fast main menu
+money or materials drop from enemies.
+to 3d.
+
+2. cycles.
+figure out the mechanics completly. first complete, playable prototype.
+
+
+3. cycles.
+reiterate.
+artist.
+
+4. cycle
+look into publishing and releases... ads.

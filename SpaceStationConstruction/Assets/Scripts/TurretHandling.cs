@@ -13,16 +13,19 @@ public class TurretHandling {
     }
 
     public IEnumerator AttackClosestCycle(Turret turret, Action onDone) {
-        Debug.Log("attacking target");
         Transform target = GameManager.Instance.targeting.GetClosestTarget(turret.transform.position);
+        Debug.Log("attacking target "+target);
         if (target == null) {
             if (onDone!= null)
                 onDone();
             yield return null;
         }
         while (target != null) {
-            turret.Aim(target.position, target.GetComponent<Fighter>().MovePrediction);
-            turret.gun.Shoot(turret.data);
+            target = GameManager.Instance.targeting.GetClosestTarget(turret.transform.position);
+            if (target != null) {
+                turret.Aim(target.position, target.GetComponent<Fighter>().MovePrediction);
+                turret.gun.Shoot(turret.data);
+            }
             yield return null;
         }
         yield return null;

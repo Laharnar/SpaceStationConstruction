@@ -7,7 +7,7 @@ public class GameManager:MonoBehaviour {
     public UnitList units;
     [HideInInspector]public SpawnZones zones;
     public QuestBehaviours questBehaviour;
-    public WaveManagerAccess waves;
+    public QuestManagerAccess quests;
     public BulletAccess bullets;
     public Targeting targeting;
     public TurretHandling turretBehaviour;
@@ -24,7 +24,7 @@ public class GameManager:MonoBehaviour {
                     instance.building = new BuildingManagerAccess();
                     instance.ui = new UiManagerAccess();
                     instance.GetComponent<SpawnZones>();
-                    instance.waves = new WaveManagerAccess();
+                    instance.quests = new QuestManagerAccess();
                     instance.zones = instance.GetComponent<SpawnZones>();
                     instance.bullets = new BulletAccess();
                     instance.turretBehaviour = new TurretHandling();
@@ -35,8 +35,5 @@ public class GameManager:MonoBehaviour {
             return instance;
         }
     }
-
-    private void Start() {
-        Instance.waves.StartWaves();
-    }
+    
 }

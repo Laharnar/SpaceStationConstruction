@@ -16,4 +16,8 @@ public class UICommands:MonoBehaviour {
         }
         GameManager.Instance.building.BuildAddon(i, SelectableObject.lastSelected.transform.position, null);
     }
+
+    public void SelectQuest(int i) {
+        GameManager.Instance.ui.ActivateQuestUI(i);
+    }
 }

@@ -1,8 +1,4 @@
 ﻿using UnityEngine;
-// TODO: selected item type(module, fighter, turret, instalation)
-public enum SelectionType {
-    Module, Fighter, Turret, Addon
-}
 /// <summary>
 /// 
 /// </summary>

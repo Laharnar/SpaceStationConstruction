@@ -13,7 +13,7 @@ public class Fighter:MonoBehaviour, IDestructible {
 
     Vector2 gizmoTargetPos;
 
-    public Vector2 MovePrediction { get { return RotationDir(transform.position, transform.up, gizmoTargetPos, data.rotationSpeed, data.flySpeed); } }
+    public Vector2 MovePrediction { get { return Time.deltaTime* data.flySpeed* RotationDir(transform.position, transform.up, gizmoTargetPos, data.rotationSpeed, data.flySpeed); } }
 
     private void Awake() {
         GameManager.Instance.targeting.Register(this);

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50046164413135102}
   - component: {fileID: 61574698678490662}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: BulletTurrets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rig: {fileID: 50046164413135102}
   stats:
-    alliance: 0
+    alliance: 1
     damage: 1
     speed: 30
 --- !u!212 &212241125227974382

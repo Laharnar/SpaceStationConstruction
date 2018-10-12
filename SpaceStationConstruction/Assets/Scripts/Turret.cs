@@ -7,6 +7,8 @@ public class Turret:MonoBehaviour {
 
     Coroutine behaviour;
 
+    Vector2 lastAim;
+
     private void Start() {
         StartCoroutine(TurretBehaviour1());
     }
@@ -21,18 +23,14 @@ public class Turret:MonoBehaviour {
     }
 
     public void Aim(Vector2 point, Vector2 predictionDir) {
+        lastAim = point;
         if (false) {
             transform.up = point - (Vector2)transform.position;
-        }
+        }else
         transform.up = (point + predictionDir) - (Vector2)transform.position;
     }
 
-    public void Aim() {
-        Transform t = GameManager.Instance.targeting.GetClosestTarget((Vector2)transform.position);
-        if (t!= null) {
-            transform.up = t.position - transform.position;
-        }
+    private void OnDrawGizmos() {
+        Gizmos.DrawLine(transform.position, lastAim);
     }
-
-    
 }

@@ -10,8 +10,25 @@ public class QuestBehaviours {
     int unitCounter = 0;
     int unitCounter2 = 0;
 
+    internal IEnumerator QuestManagerCycle() {
+        // load quests on ui
+        GameManager.Instance.ui.ShowQuestChoices(GameManager.Instance.quests.ActiveQuestSet);
+
+        // wait ui input, then close ui
+        while (!GameManager.Instance.ui.anySelectedQuest) {
+            Debug.Log("Waiting input");
+            yield return null;
+        }
+        GameManager.Instance.ui.ConsumeSelectedQuest();
+        GameManager.Instance.ui.HideQuestUI();
+
+        // start quest
+        GameManager.Instance.quests.StartWaves();
+        yield return null;
+    }
+
     // behaviour for spawn quest
-    internal IEnumerator Execute(SpawnQuest spawnQuest) {
+    internal IEnumerator ExecuteWave(SpawnQuest spawnQuest) {
         Debug.Log("[QUESTS] Starting quest");
         for (int i = 0; i < spawnQuest.waves.Length; i++) {
             Debug.Log("[QUESTS/WAVES] starting wave " + i);
