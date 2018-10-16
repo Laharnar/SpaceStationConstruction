@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-public class Turret:MonoBehaviour {
+public class Turret:MonoBehaviour, IAiTracking {
     public GunInfo gun;
     public TurretData data;
 
     Coroutine behaviour;
 
     Vector2 lastAim;
+    public string aiState { get; set; }
 
     private void Start() {
         StartCoroutine(TurretBehaviour1());

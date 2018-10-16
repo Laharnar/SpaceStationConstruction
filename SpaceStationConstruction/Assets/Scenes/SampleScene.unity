@@ -787,6 +787,16 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 358282072}
+--- !u!4 &412599906 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4242730981562298, guid: f3ad9ae1aa0c8ed428bbdc0363a6b32d,
+    type: 2}
+  m_PrefabInternal: {fileID: 221853430}
+--- !u!4 &492146216 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4242730981562298, guid: f3ad9ae1aa0c8ed428bbdc0363a6b32d,
+    type: 2}
+  m_PrefabInternal: {fileID: 47310413}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1272,12 @@ MonoBehaviour:
   questBehaviour:
     enemySpawnRate: 1
     spawnDirection: {x: 0, y: 0}
+  station:
+    stationPieces:
+    - {fileID: 412599906}
+    - {fileID: 1388486704}
+    - {fileID: 2066483847}
+    - {fileID: 492146216}
 --- !u!4 &889106652
 Transform:
   m_ObjectHideFlags: 0
@@ -1614,6 +1630,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3ad9ae1aa0c8ed428bbdc0363a6b32d, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1388486704 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4242730981562298, guid: f3ad9ae1aa0c8ed428bbdc0363a6b32d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1568429044}
 --- !u!1 &1554169737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,6 +2535,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e08b25a1ce30104dac4bb135cae5db5, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &2066483847 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4242730981562298, guid: f3ad9ae1aa0c8ed428bbdc0363a6b32d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1227261083}
 --- !u!1 &2102155332
 GameObject:
   m_ObjectHideFlags: 0

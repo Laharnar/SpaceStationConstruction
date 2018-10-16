@@ -6,7 +6,7 @@ public class TurretHandling {
     public IEnumerator WaitAvaliableTarget(Turret turret, Action onDone) {
         Transform target = null;
         do {
-            Debug.Log(turret +" waiting target");
+            turret.aiState = "waiting target";
             target = GameManager.Instance.targeting.GetClosestTarget(turret.transform.position);
             yield return null;
         } while (target == null);
@@ -14,7 +14,6 @@ public class TurretHandling {
 
     public IEnumerator AttackClosestCycle(Turret turret, Action onDone) {
         Transform target = GameManager.Instance.targeting.GetClosestTarget(turret.transform.position);
-        Debug.Log("attacking target "+target);
         if (target == null) {
             if (onDone!= null)
                 onDone();
@@ -22,6 +21,7 @@ public class TurretHandling {
         }
         while (target != null) {
             target = GameManager.Instance.targeting.GetClosestTarget(turret.transform.position);
+            turret.aiState = "attacking target " + target;
             if (target != null) {
                 turret.Aim(target.position, target.GetComponent<Fighter>().MovePrediction);
                 turret.gun.Shoot(turret.data);

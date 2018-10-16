@@ -11,7 +11,6 @@ public class UnitList {
         slots.Add(selected);
         turrets.Add(t);
     }
-
     public bool Exists(Transform turret) {
         for (int i = 0; i < turrets.Count; i++) {
             if (turrets[i].gameObject == turret.gameObject) {

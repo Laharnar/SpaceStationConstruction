@@ -21,6 +21,8 @@ public class QuestManagerAccess {
         }
     }
 
+    public bool AnyQuest { get { return !manager.noQuests; } }
+
     public void StartWaves() {
         Debug.Log("Starting wave 1");
         GameManager.Instance.StartCoroutine(manager.WaveUpdate1());

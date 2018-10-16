@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-
-public class Fighter:MonoBehaviour, IDestructible {
+interface IAiTracking {
+    string aiState { get; set; }
+} 
+public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
     public GunInfo gun;
     public FighterData data;
     public Rigidbody2D rig;
-    [HideInInspector]public string aiState;
 
     Vector2 nextMove;
     float nextRotation;
@@ -14,6 +15,7 @@ public class Fighter:MonoBehaviour, IDestructible {
     Vector2 gizmoTargetPos;
 
     public Vector2 MovePrediction { get { return Time.deltaTime* data.flySpeed* RotationDir(transform.position, transform.up, gizmoTargetPos, data.rotationSpeed, data.flySpeed); } }
+    public string aiState { get; set; }
 
     private void Awake() {
         GameManager.Instance.targeting.Register(this);
@@ -72,7 +74,9 @@ public class Fighter:MonoBehaviour, IDestructible {
         target += -up;
         Vector2 upDir = (Vector2)up.normalized * circleDist;
         Vector2 circleDir = ((Vector2)target - (tpos + upDir)).normalized * circleSize;
-        Vector2 lookDir = (upDir + circleDir).normalized;
+        Vector2 randomDir = new Vector2(UnityEngine.Random.Range(-1, 1), UnityEngine.Random.Range(-1, 1)).normalized;
+        float circleVsRandom = 0.6f;
+        Vector2 lookDir = (upDir + circleDir* circleVsRandom + randomDir*(1-circleVsRandom)).normalized;
         return lookDir;
     }
 

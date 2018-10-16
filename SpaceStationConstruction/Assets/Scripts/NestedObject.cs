@@ -6,7 +6,8 @@ public class NestedObject:MonoBehaviour {
     public Transform targetPref;
 
     private void Awake() {
-        Instantiate(targetPref, transform.position, transform.rotation);
+        Transform t = Instantiate(targetPref, transform.position, transform.rotation);
+        t.parent = transform.parent;
         Destroy(gameObject);
     }
 }

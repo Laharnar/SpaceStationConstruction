@@ -9,6 +9,7 @@ using UnityEngine;
 public class SpawnQuest:ScriptableObject {
     public PrefabLib lib;
     public WaveItem[] waves;
+    public QuestReward reward;
 }
 
 interface IQuest {

@@ -34,7 +34,6 @@ public class FighterHandling {
                 f.aiState = "B:Approaching target, shooting.";
                 if (module != null)
                     lastAttackedPos = module.position;
-                f.aiState = "Approaching target/Move." + lastAttackedPos;
                 f.Move();
                 f.Steering(lastAttackedPos);
                 f.aiState = "Approaching target/Move+steer. " + lastAttackedPos;
@@ -49,6 +48,7 @@ public class FighterHandling {
                 f.aiState = "Moving out of target range after getting too close.";
                 if (module != null)
                     lastAttackedPos = module.position;
+                f.Steering(f.transform.position + f.transform.up*f.data.flySpeed*f.data.rotationSpeed);
                 f.Move();
                 f.aiState = "Away from target/Move." + lastAttackedPos;
                 yield return null;

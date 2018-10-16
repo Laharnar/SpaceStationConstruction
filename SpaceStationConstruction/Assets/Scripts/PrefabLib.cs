@@ -5,11 +5,12 @@ using UnityEngine;
 public class PrefabLib : ScriptableObject {
     public Transform[] prefabs;
 
-    internal void Spawn(int itemId, Vector2 vector2) {
+    internal Transform Spawn(int itemId, Vector2 vector2) {
         if (itemId < prefabs.Length) {
             Debug.Log("[PREFAB LIB] spawned "+ itemId + " at "+vector2+ " "+prefabs[itemId].name);
-            GameObject.Instantiate(prefabs[itemId], vector2, new Quaternion());
+            return GameObject.Instantiate(prefabs[itemId], vector2, new Quaternion());
         } else
             Debug.Log("Invalid id " + itemId);
+        return null;
     }
 }

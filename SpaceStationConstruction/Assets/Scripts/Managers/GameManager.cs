@@ -12,7 +12,8 @@ public class GameManager:MonoBehaviour {
     public Targeting targeting;
     public TurretHandling turretBehaviour;
     public FighterHandling fighterBehaviour;
-
+    public Station station;
+    //testc if stuff gets disabled and then properly enabled.
     public static GameManager Instance {
         get {
             if (instance == null) {
@@ -30,10 +31,14 @@ public class GameManager:MonoBehaviour {
                     instance.turretBehaviour = new TurretHandling();
                     instance.targeting = new Targeting();
                     instance.fighterBehaviour = new FighterHandling();
+
                 }
             }
             return instance;
         }
     }
-    
+
+    private void Start() {
+        instance.station.Init();
+    }
 }

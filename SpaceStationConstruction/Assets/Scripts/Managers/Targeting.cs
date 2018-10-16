@@ -25,6 +25,9 @@ public class Targeting {
         float min = float.MaxValue;
         Transform closest = null;
         for (int i = 0; i < list.Count; i++) {
+            if (list[i].gameObject.activeSelf == false) {
+                continue;
+            }
             float dist = Vector2.Distance(position, list[i].transform.position);
             if (dist > 0 && dist < min) {
                 min = dist;
