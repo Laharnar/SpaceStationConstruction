@@ -29,13 +29,7 @@ Also adds a nice control over how the stuff is added.
 NOTE: as far as quests go... do they decide the build path, or
 content amount?
 
-modules cycle > load quest+ui > start button > execute quest 
-> end quest(get results)
-light, medium, heavy fighter... for now.
-quest variations: figure those out. just have a 5 build step quest line
-for now.
-fast main menu
-money or materials drop from enemies.
+money or materials drop from enemies/quest.
 to 3d.
 
 2. cycles.

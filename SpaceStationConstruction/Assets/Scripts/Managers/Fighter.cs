@@ -3,7 +3,13 @@ using System.Collections;
 using UnityEngine;
 interface IAiTracking {
     string aiState { get; set; }
-} 
+}
+
+[System.Serializable]
+public class KillReward {
+    public int reward = 30;
+}
+
 public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
     public GunInfo gun;
     public FighterData data;
@@ -35,7 +41,8 @@ public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
         }
     }
 
-    public void OnDestroyed() {
+    public void OnObjDestroyed() {
+        GameManager.Instance.building.AddMoney(data.death.reward);
         GameManager.Instance.targeting.DeRegister(this);
     }
 
@@ -87,5 +94,5 @@ public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
         Gizmos.DrawLine(transform.position, gizmoTargetPos);
         Gizmos.DrawLine(transform.position, transform.up);
     }
-
+    
 }

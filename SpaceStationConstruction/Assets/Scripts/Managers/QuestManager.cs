@@ -25,6 +25,7 @@ public class QuestManager:MonoBehaviour {
             if (quest != null) {
                 noQuests = false;
                 yield return StartCoroutine(GameManager.Instance.questBehaviour.SpawnAndWaitDeathQuest(quest));
+                quest.reward.Apply(Vector3.zero);
                 quest = null;
                 noQuests = true;
             }

@@ -4,6 +4,8 @@ using UnityEngine;
 public class BuildingManagerAccess {
     [SerializeField] BuildingManager buildingManager;
 
+    public int Money { get { return buildingManager.cash; } }
+
     public BuildingManagerAccess() {
         buildingManager = GameObject.FindObjectOfType<BuildingManager>();
     }
@@ -16,6 +18,15 @@ public class BuildingManagerAccess {
         Transform turret = selected.transform.GetChild(0).transform;
         return GameManager.Instance.units.Exists(turret);
     }
+
+    internal void RemoveMoney(int v) {
+        buildingManager.cash -= v;
+    }
+
+    internal void AddMoney(int money) {
+        buildingManager.cash += money;
+    }
+
     public bool TurretExists(Transform turret) {
         return GameManager.Instance.units.Exists(turret);
     }
@@ -30,6 +41,10 @@ public class BuildingManagerAccess {
     }
 
     internal void BuildTurret(int turretId, Vector3 position, Transform parent) {
+        if (!buildingManager.turrets.HasMoney(turretId, GameManager.Instance.building.Money)) {
+            Debug.Log("Not enough money for tower "+turretId+".");
+            return;
+        }
         Debug.Log("[BUILD] turret built, ui should close");
         Transform turret = buildingManager.turrets.Build(turretId, position);
 
@@ -38,11 +53,8 @@ public class BuildingManagerAccess {
             GameManager.Instance.units.RegisterTurret(SelectableObject.lastSelected, turret);
         }
 
-        // assumes the slot doesn't have built ui.
         string curUI = GameManager.Instance.ui.activeUI;
-        Debug.Log("changeUI "+curUI + " to "+ "+_buildTower");
-        GameManager.Instance.ui.HideUI();
-        GameManager.Instance.ui.ShowUI(curUI+ "_builtTower", SelectableObject.lastSelected.transform.position);
+        GameManager.Instance.ui.ChangeUI(curUI + "_builtTower", SelectableObject.lastSelected.transform.position);
     }
     
 }

@@ -11,6 +11,7 @@ using UnityEngine;
 public class TurretBuilding {
 
     public Transform[] turretPrefs;
+    public int[] price;
 
     Dictionary<Vector3, Transform> turretInstances = new Dictionary<Vector3, Transform>();
 
@@ -19,12 +20,16 @@ public class TurretBuilding {
     }
 
     public Transform Build(int id, Vector3 pos) {
+        if (id < price.Length) {
+            GameManager.Instance.building.RemoveMoney(price[id]);
+        } else {
+            Debug.LogError("[Turret price]Out of range id " + id);
+        }
         if (id < turretPrefs.Length) {
             return SpawnPref(turretPrefs[id], pos);
-        } else {
-            Debug.LogError("[Turret building]Out of range id "+ id);
-            return null;
-        }
+        } 
+        Debug.LogError("[Turret building]Out of range id "+ id);
+        return null;
     }
 
     public Transform SpawnPref(Transform pref, Vector3 pos) {
@@ -35,5 +40,13 @@ public class TurretBuilding {
         Transform t= GameObject.Instantiate(pref, pos, new Quaternion()).transform;
         turretInstances.Add(pos, t);
         return t;
+    }
+
+    public bool HasMoney(int i, int money) {
+        if (i < price.Length) {
+            return money >= price[i];
+        }
+        Debug.Log("Id "+i+" out of range.");
+        return false;
     }
 }

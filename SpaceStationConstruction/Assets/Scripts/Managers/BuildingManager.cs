@@ -7,6 +7,7 @@ public class BuildingManager : MonoBehaviour {
     SelectableObject selectedItem { get { return SelectableObject.lastSelected; } set { SelectableObject.lastSelected = value; } }
 
     public TurretBuilding turrets;
+    public int cash = 0;
 
     private void Update() {
         GetCurrentSelection();

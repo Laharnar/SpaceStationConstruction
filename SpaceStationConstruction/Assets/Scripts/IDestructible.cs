@@ -1,3 +1,3 @@
 ﻿interface IDestructible {
-    void OnDestroyed();
+    void OnObjDestroyed();
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class UiManagerAccess {
     [SerializeField] UiManager uiManager;
@@ -57,5 +58,14 @@ public class UiManagerAccess {
 
     internal void HideUI() {
         uiManager.HideUI();
+    }
+
+    internal void ChangeUI(string newUi, Vector3 position) {
+        // assumes the slot doesn't have built ui.
+        string curUI = GameManager.Instance.ui.activeUI;
+        Debug.Log("changeUI " + curUI + " to " + newUi);
+        GameManager.Instance.ui.HideUI();
+        GameManager.Instance.ui.ShowUI(newUi, SelectableObject.lastSelected.transform.position);
+
     }
 }

@@ -7,7 +7,7 @@ public class StationModule:MonoBehaviour, IDestructible {
         GameManager.Instance.targeting.Register(this);
     }
 
-    public void OnDestroyed() {
+    public void OnObjDestroyed() {
         GameManager.Instance.targeting.DeRegister(this);
     }
 }

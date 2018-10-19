@@ -4,5 +4,6 @@ public class FighterData {
     public float flySpeed = 1f;
     public float rotationSpeed = 30f;
     public TurretData shooting;
+    public KillReward death;
 
 }

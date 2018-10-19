@@ -14,7 +14,7 @@ public class UnitStats {
     internal void SetHp(int nextHp, GameObject source, IDestructible destructibleSource) {
         health = nextHp;
         if (health <= 0) {
-            destructibleSource.OnDestroyed();
+            destructibleSource.OnObjDestroyed();
             GameObject.Destroy(source);
         }
     }
