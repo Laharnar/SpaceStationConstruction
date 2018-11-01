@@ -1,0 +1,166 @@
+{
+    "quests": [
+        {
+            "title": "Medical",
+            "description": "Set up medical",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        },
+        
+        {
+            "title": "Engineering",
+            "description": "Set up engineering department",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        },
+        
+        {
+            "title": "Communications",
+            "description": "Communications",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        },
+        
+        {
+            "title": "CIC",
+            "description": "Build CIC",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        },
+        
+        {
+            "title": "Science lab",
+            "description": "Set up laboratories. Unlocks science tree.",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        },
+        
+        {
+            "title": "Hangar one",
+            "description": "Unlocks fighters",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        },
+        
+        {
+            "title": "Hangar 2",
+            "description": "Unlocks more fighters",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        },
+        {
+            "title": "Engines",
+            "description": "engines",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        },
+        {
+            "title": "Civilian places",
+            "description": "civis",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        },
+        {
+            "title": "Military places",
+            "description": "engines",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        },
+        {
+            "title": "Ambassady",
+            "description": "ambassady station",
+            "waves": [
+                {
+                    "itemId": 0,
+                    "times": 5
+                }
+            ],
+            "reward": {
+                "mode": 0,
+                "money": 100
+            }
+        }
+        
+        
+    ]
+}

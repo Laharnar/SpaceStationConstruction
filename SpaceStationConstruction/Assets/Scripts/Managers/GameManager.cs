@@ -13,6 +13,9 @@ public class GameManager:MonoBehaviour {
     public TurretHandling turretBehaviour;
     public FighterHandling fighterBehaviour;
     public Station station;
+    public PrefabLib spawnLib;
+    public TurretList turretManager;
+
     //testc if stuff gets disabled and then properly enabled.
     public static GameManager Instance {
         get {
@@ -31,7 +34,7 @@ public class GameManager:MonoBehaviour {
                     instance.turretBehaviour = new TurretHandling();
                     instance.targeting = new Targeting();
                     instance.fighterBehaviour = new FighterHandling();
-
+                    instance.turretManager = new TurretList();
                 }
             }
             return instance;
@@ -40,5 +43,6 @@ public class GameManager:MonoBehaviour {
 
     private void Start() {
         instance.station.Init();
+        //Transform2T3D.Test();
     }
 }

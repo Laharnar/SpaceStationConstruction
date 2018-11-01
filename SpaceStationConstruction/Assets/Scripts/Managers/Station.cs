@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [System.Serializable]
 public class Station {
@@ -30,8 +31,12 @@ public class Station {
     }
 
     public void BuildNextPiece(Transform piece) {
-        piece.gameObject.SetActive(true);
-        activePiece++;
+        if (piece) {
+            piece.gameObject.SetActive(true);
+            activePiece++;
+        } else {
+            Debug.Log("Piece is null. End of builds?");
+        }
     }
 
     public Transform[] NextAvaliablePieces() {
@@ -40,5 +45,13 @@ public class Station {
             return new Transform[1] { stationPieces[activePiece] };
         }
         return new Transform[0];
+    }
+
+    internal Transform NextAvaliablePiece() {
+        Transform[] t = NextAvaliablePieces();
+        if (t.Length > 0) {
+            return t[0];
+        }
+        return null;
     }
 }

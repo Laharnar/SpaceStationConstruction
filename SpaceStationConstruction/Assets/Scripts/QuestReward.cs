@@ -6,7 +6,7 @@ public class QuestReward {
     public int mode = 0;
     public int money = 100; 
     
-    public Transform spawnObject;
+    [NonSerialized]public Transform spawnObject;
 
     public void Apply(Vector3 referencePos) {
         if (mode == 0) {

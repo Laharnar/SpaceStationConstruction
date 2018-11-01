@@ -1,0 +1,59 @@
+{
+    "nodes": [
+        {
+            "directions": [
+                1
+            ]
+        },
+        {
+            "directions": [
+                2
+            ]
+        },
+        {
+            "directions": [
+                3
+            ]
+        },
+        {
+            "directions": [
+                4
+            ]
+        },
+        {
+            "directions": [
+                5
+            ]
+        },
+        {
+            "directions": [
+                6
+            ]
+        },
+        {
+            "directions": [
+                7
+            ]
+        },
+        {
+            "directions": [
+                8
+            ]
+        },
+        {
+            "directions": [
+                9
+            ]
+        },
+        {
+            "directions": [
+                10
+            ]
+        },
+        {
+            "directions": [
+                10
+            ]
+        }
+    ]
+}

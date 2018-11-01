@@ -5,10 +5,17 @@ public class Turret:MonoBehaviour, IAiTracking {
     public GunInfo gun;
     public TurretData data;
 
+    public TurretStates modes;
+
     Coroutine behaviour;
 
     Vector2 lastAim;
     public string aiState { get; set; }
+
+    private void Awake() {
+        GameManager.Instance.turretManager.RegisterTurret(this);
+        modes.Init(this);
+    }
 
     private void Start() {
         StartCoroutine(TurretBehaviour1());
@@ -34,4 +41,5 @@ public class Turret:MonoBehaviour, IAiTracking {
     private void OnDrawGizmos() {
         Gizmos.DrawLine(transform.position, lastAim);
     }
+
 }

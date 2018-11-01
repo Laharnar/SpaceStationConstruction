@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
 public class UiManager : MonoBehaviour {
     internal string activeUI;
 
@@ -25,9 +24,11 @@ public class UiManager : MonoBehaviour {
     public void ShowQuestButtons(Button[] btns, Action<int> send, string[] txt) {
         for (int i = 0; i < btns.Length; i++) {
             //btns[i].onClick.RemoveAllListeners();
-            if (i <txt.Length)
+            if (i < txt.Length) {
+                btns[i].gameObject.SetActive(true);
                 btns[i].transform.GetChild(0).GetComponent<Text>().text = txt[i];
-            else {
+            } else {
+                btns[i].gameObject.SetActive(false);
                 Debug.Log("Not enough text data for all buttons");
             }
             Debug.Log("Setting event as "+i);

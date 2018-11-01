@@ -1,4 +1,28 @@
-﻿goal --- fully functional prototype with minimal gameplay
+﻿goal 27.10.2018-_____ ------------- full gameplay.
+
+goal 27.10.2018-_____ ------------- functional prototype2
+play through the whole thing with quests, and functioning
+building, and mechanics.
+Done:
+build paths, as a civ build tree.(json readed for quest info)
+be able to pick a path of 5-10 quests.
+turret have 2 modes. swap between them. click button or qwe.
+Active:
+3 turret types(
+(multiple)anti drone/antifighter, 
+(singular, mixed)chain detonation by size/homing(detonates/disables engines)
+(laser)(piercing)antiarmor /antishield pierce).
+)
+Todo:
+4 enemy classes, 
+drone(super small, fast), 
+craft(small, fast, shield, guns), 
+medium ship(medium size, armor, shield, guns), 
+capital(slow, big, heavy, shields, armor)
+temporary waves for all quests.
+also check for wave making optimizations. maybe an editor.
+
+goal --- fully functional prototype with minimal gameplay
 - including, buidling, enemy waves and units, ally turrets, addons, modules, 
 quests.
 test spawning of units, in a large square wave ok
@@ -23,13 +47,12 @@ then outline a 5 step quest, for modules.
 nested prefabs template
 temporary object, replaced with a pref on runtime.
 Also adds a nice control over how the stuff is added.
-
+--------------------
 
 1 cycle.
 NOTE: as far as quests go... do they decide the build path, or
 content amount?
 
-money or materials drop from enemies/quest.
 to 3d.
 
 2. cycles.

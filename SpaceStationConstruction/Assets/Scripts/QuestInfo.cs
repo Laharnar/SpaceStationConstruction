@@ -5,5 +5,11 @@ public class QuestInfo {
     public string title;
     public string description;
 
-    public SpawnQuest waveData;
+    public WaveItem[] waves;
+    public QuestReward reward;
+
+    //public SpawnQuest waveData;
+
+
 }
+

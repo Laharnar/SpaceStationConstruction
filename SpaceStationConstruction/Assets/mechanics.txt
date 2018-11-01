@@ -1,0 +1,9 @@
+﻿science: research additional tech options
+
+select tower > transform tower+tech tree
+
+aoe: wave attack, rocket attack
+single: rapid fire zone, laser, straight bullet
+shield: protect the base and deal dmg to fighters inside.
+regenerative: heal bases
+hangar: fighters

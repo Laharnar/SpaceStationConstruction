@@ -52,7 +52,7 @@ public class UiManagerAccess {
     /// </summary>
     /// <param name="ui"></param>
     public void ActivateQuestUI(int ui) {
-        GameManager.Instance.quests.SetActiveQuestFromSet(ui);
+        GameManager.Instance.quests.PickQuestFromList(ui);
         anySelectedQuest = true;
     }
 
