@@ -19,7 +19,7 @@ public class FighterHandling {
     }
 
     public IEnumerator FighterAttackModules(Fighter f) {
-        Vector3 lastAttackedPos = Vector3.zero;
+        Vector3 lastAttackedPos = Vector2.zero;
         while (f != null) {
 
             Transform module = GameManager.Instance.targeting.GetClosestModule(f.transform.position);
@@ -28,9 +28,9 @@ public class FighterHandling {
                 yield return null;
                 continue;
             }
-            lastAttackedPos = module.position;
+            lastAttackedPos = (Vector2)module.position;
 
-            while (f != null && Vector3.Distance(f.transform.position, lastAttackedPos) > 1f) {
+            while (f != null && Vector2.Distance(f.transform.position, lastAttackedPos) > 1f) {
                 f.aiState = "B:Approaching target, shooting.";
                 if (module != null)
                     lastAttackedPos = module.position;
@@ -44,7 +44,7 @@ public class FighterHandling {
                 yield return null;
             }
             
-            while (f != null && Vector3.Distance(f.transform.position, lastAttackedPos) < 5f) {
+            while (f != null && Vector2.Distance(f.transform.position, lastAttackedPos) < 5f) {
                 f.aiState = "Moving out of target range after getting too close.";
                 if (module != null)
                     lastAttackedPos = module.position;

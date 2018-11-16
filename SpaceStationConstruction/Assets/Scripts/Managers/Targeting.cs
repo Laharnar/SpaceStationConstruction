@@ -41,7 +41,7 @@ public class Targeting {
         return GetClosest(position, fighters);
     }
 
-    public Transform GetClosestModule(Vector3 position) {
+    public Transform GetClosestModule(Vector2 position) {
         return GetClosest(position, modules);
     }
 

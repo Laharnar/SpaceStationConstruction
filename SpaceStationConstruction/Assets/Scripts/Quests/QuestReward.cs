@@ -12,7 +12,7 @@ public class QuestReward {
         if (mode == 0) {
             GameManager.Instance.building.AddMoney(money);
         } else {
-            GameObject.Instantiate(spawnObject, referencePos, new Quaternion());
+            GameObject.Instantiate(spawnObject, (Vector2)referencePos, new Quaternion());
         }
     }
 

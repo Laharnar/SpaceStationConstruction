@@ -71,7 +71,7 @@ public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
         //Debug.Log("anlge: "+angle+" "+ rig.rotation + " "+ Mathf.Clamp(angle * Time.deltaTime, -data.rotationSpeed, data.rotationSpeed));
         //angle = Mathf.Clamp(angle * Time.deltaTime, -data.rotationSpeed, data.rotationSpeed);
         //nextRotation = rig.rotation + angle;
-        Vector2 lookDir = RotationDir(transform.position, transform.up, module, data.rotationSpeed, data.flySpeed);
+        Vector2 lookDir = RotationDir(transform.position, transform.up, (Vector2)module, data.rotationSpeed, data.flySpeed);
         transform.up = lookDir;
     }
 

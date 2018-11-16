@@ -25,7 +25,7 @@ public class BuildingManager : MonoBehaviour {
                 string additionalTag = "";
                 if (GameManager.Instance.building.TurretExists(selectedItem))
                     additionalTag += "_builtTower";
-                GameManager.Instance.ui.ShowUI(selectedItem.selectionType.ToString() + additionalTag, selectedItem.transform.position);
+                GameManager.Instance.ui.ShowUI(selectedItem.selectionType.ToString() + additionalTag, (Vector2)selectedItem.transform.position);
             }
         }
     }

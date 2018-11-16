@@ -28,6 +28,7 @@ build different turrets
 
 Todo:
 to 3d
+mark every type of code that would have to be changed to work for 3d
 stuff?
 
 goal --- fully functional prototype with minimal gameplay of 10 minutes.

@@ -25,7 +25,7 @@ public class Station {
                 return stationPieces[activePiece + 1].position;
             }
             Debug.Log("No avaliable build pos");
-            return new Vector3(1000,0,0);
+            return new Vector2(1000,0);
         }
 
     }
