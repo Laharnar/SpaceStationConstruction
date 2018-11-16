@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 61173871416347616}
   - component: {fileID: 50624395204527316}
   m_Layer: 0
-  m_Name: Fighter
+  m_Name: MediumCraft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,9 +133,9 @@ MonoBehaviour:
   data:
     stats:
       alliance: 0
-      shields: 4
-      health: 8
-      armor: 0.5
+      shields: 0
+      health: 10
+      armor: 0.25
     flySpeed: 6
     rotationSpeed: 2
     shooting:

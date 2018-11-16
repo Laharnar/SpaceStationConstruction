@@ -33,7 +33,6 @@ public class Station {
     public void BuildNextPiece(Transform piece) {
         if (piece) {
             piece.gameObject.SetActive(true);
-            activePiece++;
         } else {
             Debug.Log("Piece is null. End of builds?");
         }
@@ -41,7 +40,7 @@ public class Station {
 
     public Transform[] NextAvaliablePieces() {
         activePiece++;
-        if (activePiece + 1 < stationPieces.Length) {
+        if (activePiece < stationPieces.Length) {
             return new Transform[1] { stationPieces[activePiece] };
         }
         return new Transform[0];

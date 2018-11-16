@@ -23,20 +23,26 @@ public class QuestManager:MonoBehaviour {
     }
 
     // SPECIFICALLY spawn quest behaviour.
+    // executes a SINGLE quest. handle multiple quests elswhere.
     public IEnumerator WaveUpdate1() {
         //
         //temp code
-        while (true) {
-            if (executingQuest != null) {
-                lastExecutingQuest = executingQuest;
-                noQuests = false;
-                yield return StartCoroutine(GameManager.Instance.questBehaviour.SpawnAndWaitDeathQuest(executingQuest));
-                executingQuest.reward.Apply(Vector3.zero);
-                executingQuest = null;
-                noQuests = true;
-            }
-            yield return null;
+        //while (true) {
+        //if (executingQuest != null) {
+        lastExecutingQuest = executingQuest;
+        noQuests = false;
+        yield return StartCoroutine(GameManager.Instance.questBehaviour.SpawnAndWaitDeathQuest(executingQuest));
+        Debug.Log("ended quest... is it too fast?");
+        if (executingQuest.reward != null)
+            executingQuest.reward.Apply(Vector3.zero);
+        else {
+            Debug.Log("Err: missing reward on current quest " + executingQuest.title);
         }
+        executingQuest = null;
+        noQuests = true;
+        //}
+        //  yield return null;
+        //}
     }
 
 }

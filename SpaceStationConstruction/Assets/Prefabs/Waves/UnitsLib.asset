@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Name: UnitsLib
   m_EditorClassIdentifier: 
   prefabs:
+  - {fileID: 4116846982272428, guid: 01392a2d5ce1e2d49b128e10588a8073, type: 2}
   - {fileID: 4501693674120286, guid: 6664433bacc57d24990344a5c16080fb, type: 2}
+  - {fileID: 4501693674120286, guid: bb7c85d81c5812943b0127ed66abb5eb, type: 2}
+  - {fileID: 4557964375772716, guid: ba0cdc982383772469cecbeff7edf08e, type: 2}

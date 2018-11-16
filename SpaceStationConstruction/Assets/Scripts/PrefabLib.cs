@@ -7,7 +7,8 @@ public class PrefabLib : ScriptableObject {
 
     internal Transform Spawn(int itemId, Vector2 vector2) {
         if (itemId < prefabs.Length) {
-            Debug.Log("[PREFAB LIB] spawned "+ itemId + " at "+vector2+ " "+prefabs[itemId].name);
+            if (false)
+                Debug.Log("[PREFAB LIB] spawned "+ itemId + " at "+vector2+ " "+prefabs[itemId].name);
             return GameObject.Instantiate(prefabs[itemId], vector2, new Quaternion());
         } else
             Debug.Log("Invalid id " + itemId);

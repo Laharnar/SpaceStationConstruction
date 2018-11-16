@@ -34,7 +34,6 @@ public class QuestManagerAccess {
     public bool AnyQuest { get { return !manager.noQuests; } }
 
     public void StartWaves() {
-        Debug.Log("Starting wave 1");
         GameManager.Instance.StartCoroutine(manager.WaveUpdate1());
     }
 
@@ -56,13 +55,13 @@ public class QuestManagerAccess {
         };
     }
 
-    internal void LoadQuestsFromFiles(string QUESTS_LOAD_PATH, string QUESTTREE_LOAD_PATH) {
-        QuestSet qs = LoadJsonFiles.LoadJsonToSerializable<QuestSet>(QUESTS_LOAD_PATH);
+
+
+    
+
+    internal void SetQuest(OneWayTreeNode tree) {
         GameManager.Instance.quests.SetQuestTree(
-            OneWayTreeNode.ConstructQuestTree(
-                qs.quests,
-                LoadJsonFiles.LoadJsonToSerializable<QuestTreeDirections>(QUESTTREE_LOAD_PATH)
-            )
+            tree
         );
     }
 
@@ -70,7 +69,6 @@ public class QuestManagerAccess {
     QuestInfo[] GetNextSet(QuestInfo src) {
         List<QuestInfo> list = new List<QuestInfo>();
         if (src == null) { // we don't have the root yet
-            Debug.Log(manager.allQuestsAsTree);
             list.Add(manager.allQuestsAsTree.questData);
         } else {
             for (int i = 0; i < manager.allQuestsAsTree.children.Count; i++) {

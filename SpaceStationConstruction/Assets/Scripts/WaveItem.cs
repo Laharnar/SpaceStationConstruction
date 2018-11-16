@@ -8,9 +8,12 @@ public class WaveItemSO:ScriptableObject {
 }
 [System.Serializable]
 public class WaveItem {
-    public WaveSpawnItems itemId = WaveSpawnItems.FIGHTER1;
+    public WaveSpawnItems itemId = WaveSpawnItems.FIGHTER;
     public int times = 1;
 }
 public enum WaveSpawnItems {
-    FIGHTER1
+    DRONE,
+    FIGHTER,
+    MEDIUMCRAFT,
+    MOTHERSHIP
 }
