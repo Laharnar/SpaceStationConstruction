@@ -27,6 +27,7 @@ build different turrets
 )
 
 Todo:
+to 3d
 stuff?
 
 goal --- fully functional prototype with minimal gameplay of 10 minutes.

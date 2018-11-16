@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
 
 public class Transform2T3D {
+    [ContextMenu("Convert test")]
     public static void Test() {
         ConvertObjectTo3D(GameObject.Find("ModuleSample").transform, true);
     }
-
+    [ContextMenu("Convert Scene")]
+    public static void ConvertScene() {
+        foreach (var item in GameObject.FindObjectsOfType<Transform>()) {
+            ConvertObjectTo3D(item, true);
+        }
+    }
     // dir: 0 = 2d to 3d, 1 = 3d to 2d
     public static void ConvertObjectTo3D(Transform obj, bool dir) {
         // rigidbody
