@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+
 interface IAiTracking {
     string aiState { get; set; }
 }
@@ -13,7 +14,6 @@ public class KillReward {
 public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
     public GunInfo gun;
     public FighterData data;
-    public Rigidbody2D rig;
 
     Vector2 nextMove;
     float nextRotation;
@@ -22,6 +22,8 @@ public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
 
     public Vector2 MovePrediction { get { return Time.deltaTime* data.flySpeed* RotationDir(transform.position, transform.up, gizmoTargetPos, data.rotationSpeed, data.flySpeed); } }
     public string aiState { get; set; }
+
+    const float flyPlane = -1;
 
     private void Awake() {
         GameManager.Instance.targeting.Register(this);
@@ -48,6 +50,7 @@ public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
 
     public void Move() {
         transform.Translate(Vector2.up* Time.deltaTime * data.flySpeed);
+        transform.position = new Vector3(transform.position.x, transform.position.y, flyPlane);
     }
 
     internal void Steering(Vector3 module) {
@@ -86,7 +89,6 @@ public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
         Vector2 lookDir = (upDir + circleDir* circleVsRandom + randomDir*(1-circleVsRandom)).normalized;
         return lookDir;
     }
-
 
     private void OnDrawGizmos() {
         Gizmos.DrawLine(transform.position, nextMove);

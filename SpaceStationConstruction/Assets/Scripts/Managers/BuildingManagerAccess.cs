@@ -10,7 +10,7 @@ public class BuildingManagerAccess {
         buildingManager = GameObject.FindObjectOfType<BuildingManager>();
     }
     public bool TurretExists(SelectableObject selected) {
-        return buildingManager.turrets.IsTaken((Vector2)selected.transform.position);
+        return buildingManager.turrets.IsTaken(selected.transform.position);
 
         // turret is child of selected slot.
         if (selected.transform.childCount == 0)

@@ -7,7 +7,8 @@ public class UnitStats {
     public int health = 1;
     public float armor = 1f;
 
-    internal void SetShields(int nextShield) {
+    internal void SetShields(int nextShield, GameObject source) {
+        
         shields = nextShield;
     }
 

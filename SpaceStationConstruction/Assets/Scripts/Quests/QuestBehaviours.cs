@@ -15,6 +15,7 @@ public class IntSerializableArr {
 public class QuestBehaviours {
 
     public float enemySpawnRate = 1f;
+
     public Vector2 spawnDirection = Vector2.zero;
     float time;
     int unitCounter = 0;
@@ -129,16 +130,29 @@ public class QuestBehaviours {
         GameManager.Instance.quests.SetQuest(LoadTree());
     }
 
+    /// <summary>
+    /// Loads variations
+    /// </summary>
+    /// <param name="variation"></param>
+    /// <returns></returns>
     public static OneWayTreeNode LoadTree(int variation) {
-        return LoadTree(QUESTS_LOAD_PATH+ variation, QUESTTREE_LOAD_PATH + variation);
+        if (variation > -1)
+            return LoadTree(QUESTS_LOAD_PATH+ variation, QUESTTREE_LOAD_PATH + variation);
+        else return QuestBehaviours.LoadTree();
     }
 
+    /// <summary>
+    /// Loads default tree
+    /// </summary>
+    /// <returns></returns>
     public static OneWayTreeNode LoadTree() {
         return LoadTree(QUESTS_LOAD_PATH, QUESTTREE_LOAD_PATH);
     }
 
     public static OneWayTreeNode LoadTree(string QUESTS_LOAD_PATH, string QUESTTREE_LOAD_PATH) {
         QuestSet qs = LoadJsonFiles.LoadJsonToSerializable<QuestSet>(QUESTS_LOAD_PATH);
+        if (qs == null)
+            return null;
         return OneWayTreeNode.ConstructQuestTree(
                 qs.quests,
                 LoadJsonFiles.LoadJsonToSerializable<QuestTreeDirections>(QUESTTREE_LOAD_PATH)

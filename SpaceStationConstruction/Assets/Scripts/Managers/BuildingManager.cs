@@ -1,4 +1,6 @@
-﻿using System;
+﻿//#define TwoDMode
+
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -34,6 +36,7 @@ public class BuildingManager : MonoBehaviour {
         // Note: requires collision.
         Camera camera = Camera.main;
         Vector3 ray = camera.ScreenToWorldPoint(Input.mousePosition);
+#if TwoDMode
         RaycastHit2D hit = Physics2D.Raycast(ray, Vector3.forward, Mathf.Infinity);
         if (hit.transform != null) {
             if (SelectionFilter(hit.transform))
@@ -41,6 +44,17 @@ public class BuildingManager : MonoBehaviour {
         } else {
             //selectedItem = null;
         }
+#else 
+        RaycastHit hit;
+        if (Physics.Raycast(ray, Vector3.forward, out hit, Mathf.Infinity)) {
+            if (hit.transform != null) {
+                if (SelectionFilter(hit.transform))
+                    OnSelectItem(hit.transform);
+            } else {
+                //selectedItem = null;
+            }
+        }
+#endif
     }
 
     /// <summary>

@@ -6,18 +6,7 @@
             "waves": [
                 {
                     "itemId": 0,
-                    "times": 5,
-                    "spawnRate": 1.0
-                },
-                {
-                    "itemId": 1,
-                    "times": 3,
-                    "spawnRate": 1.0
-                },
-                {
-                    "itemId": 0,
-                    "times": 10,
-                    "spawnRate": 0.5
+                    "times": 5
                 }
             ],
             "reward": {
@@ -31,13 +20,7 @@
             "waves": [
                 {
                     "itemId": 0,
-                    "times": 5,
-                    "spawnRate": 1.0
-                },
-                {
-                    "itemId": 2,
-                    "times": 1,
-                    "spawnRate": 1.0
+                    "times": 5
                 }
             ],
             "reward": {
@@ -50,14 +33,8 @@
             "description": "Communications",
             "waves": [
                 {
-                    "itemId": 1,
-                    "times": 5,
-                    "spawnRate": 1.0
-                },
-                {
                     "itemId": 0,
-                    "times": 20,
-                    "spawnRate": 1.0
+                    "times": 5
                 }
             ],
             "reward": {
@@ -71,8 +48,7 @@
             "waves": [
                 {
                     "itemId": 0,
-                    "times": 5,
-                    "spawnRate": 1.0
+                    "times": 5
                 }
             ],
             "reward": {
@@ -86,8 +62,7 @@
             "waves": [
                 {
                     "itemId": 0,
-                    "times": 5,
-                    "spawnRate": 1.0
+                    "times": 5
                 }
             ],
             "reward": {
@@ -101,8 +76,7 @@
             "waves": [
                 {
                     "itemId": 0,
-                    "times": 5,
-                    "spawnRate": 1.0
+                    "times": 5
                 }
             ],
             "reward": {
@@ -116,8 +90,7 @@
             "waves": [
                 {
                     "itemId": 0,
-                    "times": 5,
-                    "spawnRate": 1.0
+                    "times": 5
                 }
             ],
             "reward": {
@@ -131,8 +104,7 @@
             "waves": [
                 {
                     "itemId": 0,
-                    "times": 5,
-                    "spawnRate": 1.0
+                    "times": 5
                 }
             ],
             "reward": {
@@ -146,8 +118,7 @@
             "waves": [
                 {
                     "itemId": 0,
-                    "times": 5,
-                    "spawnRate": 1.0
+                    "times": 5
                 }
             ],
             "reward": {
@@ -161,8 +132,7 @@
             "waves": [
                 {
                     "itemId": 0,
-                    "times": 5,
-                    "spawnRate": 1.0
+                    "times": 5
                 }
             ],
             "reward": {
@@ -176,8 +146,7 @@
             "waves": [
                 {
                     "itemId": 0,
-                    "times": 5,
-                    "spawnRate": 1.0
+                    "times": 5
                 }
             ],
             "reward": {

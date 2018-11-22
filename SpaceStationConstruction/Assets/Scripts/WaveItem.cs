@@ -10,6 +10,7 @@ public class WaveItemSO:ScriptableObject {
 public class WaveItem {
     public WaveSpawnItems itemId = WaveSpawnItems.FIGHTER;
     public int times = 1;
+    public float spawnRate = 1f;
 }
 public enum WaveSpawnItems {
     DRONE,

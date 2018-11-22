@@ -2,20 +2,24 @@
 using UnityEngine;
 
 public class FighterHandling {
+
+    void ApplyDmg(int dmg, UnitStats stats, GameObject source, IDestructible destructibleSource) {
+        if (dmg == 0 || stats == null) return;
+        int nextShield = Mathf.Clamp(stats.shields - dmg, 0, stats.shields);
+        int nextHp = stats.health - Mathf.CeilToInt((Mathf.Clamp(dmg - stats.shields, 0, dmg)) * (1f - stats.armor));
+        CombatMessageManager.AddMessage("DMG: "+dmg + " armor(hp):"+(100-stats.armor*100)+
+            string.Format("Set shields on {0} {1} -> {2}", source.name, stats.shields, nextShield)+
+            "Set hp on " + source.name + " " + stats.health + " -> " + nextHp, 10);
+        stats.SetShields(nextShield, source);
+        stats.SetHp(nextHp, source, destructibleSource);
+    }
+
     public void ApplyDmg(int dmg, Fighter f) {
-        if (dmg == 0 || f == null) return;
-        int nextShield = Mathf.Clamp(f.data.stats.shields - dmg, 0, f.data.stats.shields);
-        int nextHp = f.data.stats.health - (int)((Mathf.Clamp(dmg - f.data.stats.shields, 0, dmg)) * (1-f.data.stats.armor));
-        f.data.stats.SetShields(nextShield);
-        f.data.stats.SetHp(nextHp, f.gameObject, f);
+        ApplyDmg(dmg, f.data.stats, f.gameObject, f);
     }
 
     public void ApplyDmg(int dmg, StationModule f) {
-        if (dmg == 0 || f == null) return;
-        int nextShield = Mathf.Clamp(f.stats.shields - dmg, 0, f.stats.shields);
-        int nextHp = f.stats.health - (int)((Mathf.Clamp(dmg - f.stats.shields, 0, dmg)) * (1-f.stats.armor));
-        f.stats.SetShields(nextShield);
-        f.stats.SetHp(nextHp, f.gameObject, f);
+        ApplyDmg(dmg, f.stats, f.gameObject, f);
     }
 
     public IEnumerator FighterAttackModules(Fighter f) {

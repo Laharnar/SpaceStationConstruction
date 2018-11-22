@@ -6,6 +6,6 @@ public class BulletAccess {
             Debug.LogError("Missing bullet pref");
             return;
         }
-        GameObject.Instantiate(data.bulletPref, (Vector2)spawnPoint.position, spawnPoint.rotation);
+        GameObject.Instantiate(data.bulletPref, spawnPoint.position, spawnPoint.rotation);
     }
 }

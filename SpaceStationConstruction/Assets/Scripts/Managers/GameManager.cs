@@ -15,6 +15,9 @@ public class GameManager:MonoBehaviour {
     public Station station;
     public PrefabLib spawnLib;
     public TurretList turretManager;
+    public CombatMessageManager combat;
+
+    public static float EnemySpawnRate { get { return GameManager.Instance.questBehaviour.enemySpawnRate; } }
 
     //testc if stuff gets disabled and then properly enabled.
     public static GameManager Instance {
@@ -35,6 +38,13 @@ public class GameManager:MonoBehaviour {
                     instance.targeting = new Targeting();
                     instance.fighterBehaviour = new FighterHandling();
                     instance.turretManager = new TurretList();
+
+                    
+                    instance.combat = GameObject.FindObjectOfType<CombatMessageManager>();
+                    if (!instance.combat) {
+                        Debug.Log("Adding CombatMessageManager manually.");
+                        instance.combat = instance.gameObject.AddComponent<CombatMessageManager>();
+                    }
                 }
             }
             return instance;

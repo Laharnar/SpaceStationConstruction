@@ -13,13 +13,13 @@ public class TurretBuilding {
     public Transform[] turretPrefs;
     public int[] price;
 
-    Dictionary<Vector2, Transform> turretInstances = new Dictionary<Vector2, Transform>();
+    Dictionary<Vector3, Transform> turretInstances = new Dictionary<Vector3, Transform>();
 
-    public bool IsTaken(Vector2 pos) {
+    public bool IsTaken(Vector3 pos) {
         return turretInstances.ContainsKey(pos);
     }
 
-    public Transform Build(int id, Vector2 pos) {
+    public Transform Build(int id, Vector3 pos) {
         if (id < price.Length) {
             GameManager.Instance.building.RemoveMoney(price[id]);
         } else {
@@ -32,7 +32,7 @@ public class TurretBuilding {
         return null;
     }
 
-    public Transform SpawnPref(Transform pref, Vector2 pos) {
+    public Transform SpawnPref(Transform pref, Vector3 pos) {
         if (IsTaken(pos)) {
             Debug.Log("Position " + pos+" taken skipping spawn.");
             return null;

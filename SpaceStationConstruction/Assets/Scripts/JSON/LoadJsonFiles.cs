@@ -14,8 +14,13 @@ public class LoadJsonFiles {
     public static T LoadJsonToSerializable<T>(string path) where T:class{
         Debug.Log("Load json object "+typeof(T) + " from "+path);
         string json;
-        using (StreamReader r = new StreamReader(path)) {
-            json = r.ReadToEnd();
+        try {
+            using (StreamReader r = new StreamReader(path)) {
+                json = r.ReadToEnd();
+            }
+        } catch (System.Exception) {
+
+            return null;
         }
         T s = JsonUtility.FromJson<T>(json);
         return s;
