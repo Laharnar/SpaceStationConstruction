@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -13,10 +14,11 @@ public class TurretBuilding {
     public Transform[] turretPrefs;
     public int[] price;
 
+    // coordinates work in 2d.
     Dictionary<Vector3, Transform> turretInstances = new Dictionary<Vector3, Transform>();
 
-    public bool IsTaken(Vector3 pos) {
-        return turretInstances.ContainsKey(pos);
+    public bool TurretExistsAt(Vector3 pos) {
+        return turretInstances.ContainsKey((Vector2)pos);
     }
 
     public Transform Build(int id, Vector3 pos) {
@@ -33,12 +35,12 @@ public class TurretBuilding {
     }
 
     public Transform SpawnPref(Transform pref, Vector3 pos) {
-        if (IsTaken(pos)) {
+        if (TurretExistsAt(pos)) {
             Debug.Log("Position " + pos+" taken skipping spawn.");
             return null;
         }
         Transform t= GameObject.Instantiate(pref, pos, new Quaternion()).transform;
-        turretInstances.Add(pos, t);
+        turretInstances.Add((Vector2)pos, t);
         return t;
     }
 
@@ -48,5 +50,12 @@ public class TurretBuilding {
         }
         Debug.Log("Id "+i+" out of range.");
         return false;
+    }
+
+    internal Transform GetTurret(Vector3 position) {
+        if (TurretExistsAt(position)) {
+            return turretInstances[(Vector2)position];
+        }
+        return null;
     }
 }

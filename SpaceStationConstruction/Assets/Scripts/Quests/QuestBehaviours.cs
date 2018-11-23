@@ -81,8 +81,8 @@ public class QuestBehaviours {
         LoadJsonFiles.SaveSerializableToJson(
             ExtractQuestDirections(node)
             , QUESTTREE_LOAD_PATH+pathId, false);
-
     }
+
     static QuestSet ExtractQuestSet(OneWayTreeNode node) {
         QuestSet set = new QuestSet();
         OneWayTreeNode[] nodes = node.rAsList();

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class FighterHandling {
-
+    
     void ApplyDmg(int dmg, UnitStats stats, GameObject source, IDestructible destructibleSource) {
         if (dmg == 0 || stats == null) return;
         int nextShield = Mathf.Clamp(stats.shields - dmg, 0, stats.shields);

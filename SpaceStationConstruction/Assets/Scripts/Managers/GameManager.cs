@@ -55,4 +55,8 @@ public class GameManager:MonoBehaviour {
         instance.station.Init();
         //Transform2T3D.Test();
     }
+
+    private void Update() {
+        instance.ui.UpdateUI();
+    }
 }

@@ -12,9 +12,18 @@ public class UiManagerAccess {
         uiManager.ShowQuestUI(false);
     }
 
-    internal void ShowUI(string tag, Vector3 pos) {
+    internal void ShowTurretChoices(Transform turret, string tag, Vector3 pos) {
+        // Note: currently there are 2 systems supporting the turret labels.
+        // one: Get turret data : returns data that should be put on UI.
+        // two: open ui by tag. add _turretBult1, _turretBult2, _turretBult1_a. etc.
         activeUI = tag;
-        uiManager.ShowUI(tag, pos);
+        uiManager.ShowUIWithData(tag, pos, GetTurretData(turret));
+    }
+
+    private string[] GetTurretData(Transform turret) {
+        if (!turret)
+            return new string[3] { "T1:100g", "T2:x", "T3:x" };
+        else return new string[3] { "U1", "U2", "U3" };
     }
 
     internal void ConsumeSelectedQuest() {
@@ -60,12 +69,19 @@ public class UiManagerAccess {
         uiManager.HideUI();
     }
 
-    internal void ChangeUI(string newUi, Vector3 position) {
+    /*internal void ChangeUI(string newUi, Vector3 position) {
         // assumes the slot doesn't have built ui.
         string curUI = GameManager.Instance.ui.activeUI;
         Debug.Log("changeUI " + curUI + " to " + newUi);
         GameManager.Instance.ui.HideUI();
         GameManager.Instance.ui.ShowUI(newUi, SelectableObject.lastSelected.transform.position);
+    }*/
 
+    internal void Close() {
+        GameManager.Instance.ui.HideUI();
+    }
+
+    public void UpdateUI() {
+        uiManager.UpdateText();
     }
 }

@@ -27,4 +27,5 @@ public class UICommands:MonoBehaviour {
     public void SelectQuest(int i) {
         GameManager.Instance.ui.ActivateQuestUI(i);
     }
+
 }

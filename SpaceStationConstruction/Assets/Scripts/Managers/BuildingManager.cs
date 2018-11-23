@@ -13,21 +13,15 @@ public class BuildingManager : MonoBehaviour {
 
     private void Update() {
         GetCurrentSelection();
-        //Debug.Assert(selectedItem != null, "NULL selected item, select something.");
-        
     }
-
 
     private void GetCurrentSelection() {
         if (Input.GetMouseButtonDown(0)) { // if left button pressed...
             GetHoveredOrDeselect();
 
-            // open ui
             if (selectedItem != null) {
-                string additionalTag = "";
-                if (GameManager.Instance.building.TurretExists(selectedItem))
-                    additionalTag += "_builtTower";
-                GameManager.Instance.ui.ShowUI(selectedItem.selectionType.ToString() + additionalTag, (Vector2)selectedItem.transform.position);
+                // on select turret
+                OnSelectBuildSlot();
             }
         }
     }
@@ -67,7 +61,29 @@ public class BuildingManager : MonoBehaviour {
     }
 
     public void OnSelectItem(Transform t) {
+        //if (!turrets.TurretExistsAt(t.position))
         SelectableObject.lastSelected = t.GetComponent<SelectableObject>();
     }
 
+    public void OnSelectBuildSlot() {
+        // open ui, or turret ui
+        string additionalTag = "";
+        // open correct ui based on tag. temporary disabled, use other version.
+        /*if (GameManager.Instance.building.TurretExists(selectedItem))
+            additionalTag += "_builtTower";
+            */
+        GameManager.Instance.ui.ShowTurretChoices(
+            GameManager.Instance.building.GetTurret(selectedItem), 
+            selectedItem.selectionType.ToString() + additionalTag, 
+            (Vector2)selectedItem.transform.position);
+
+        // ui should be renamed, by current turret choices
+    }
+}
+public class BuildingTurrets {
+ 
+
+    public void OnPressedBuild(int choice) {
+        // execute choice at id
+    }
 }

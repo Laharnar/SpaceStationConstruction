@@ -12,9 +12,14 @@ public class UiManager : MonoBehaviour {
     // buttons that activate quests.
     public Transform questUi;
 
+    public Text cashUi;
+
     private void Awake() {
         HideUI();
+    }
 
+    public void UpdateText() {
+        cashUi.text = "Cash: " + GameManager.Instance.building.Money;
     }
 
     public void ShowQuestUI(bool visible) {
@@ -36,16 +41,22 @@ public class UiManager : MonoBehaviour {
         }
     }
 
-    public void ShowUI(string tag, Vector3 pos) {
+    public void ShowUIWithData(string tag, Vector3 pos, string[] buttonsData) {
         Debug.Log("[SHOWING UI]");
         activeUI = tag;
         for (int i = 0; i < tags.Length; i++) {
-            Debug.Log("[ShowUI/]Comparing tag" + tag + " "+tags[i] + " ui set to "+ (tag == tags[i]) + " "+ui[i]);
+            Debug.Log("[ShowUI/]Comparing tag " + tag + " "+tags[i] + " ui set to "+ (tag == tags[i]) + " "+ui[i]);
 
             if (tag == tags[i]) {
                 if (ui[i] != null) {
-                    ui[i].gameObject.SetActive(true);
 
+                    for (int k = 0; k < buttonsData.Length && k < ui[i].transform.childCount; k++) {
+                        Text txt = ui[i].transform.GetChild(k).GetComponentInChildren<Text>();
+                        if (txt) {
+                            txt.text = buttonsData[k];
+                        }
+                    }
+                    ui[i].gameObject.SetActive(true);
                     ui[i].transform.position = pos;
                 }
             } else {

@@ -9,15 +9,6 @@ public class BuildingManagerAccess {
     public BuildingManagerAccess() {
         buildingManager = GameObject.FindObjectOfType<BuildingManager>();
     }
-    public bool TurretExists(SelectableObject selected) {
-        return buildingManager.turrets.IsTaken(selected.transform.position);
-
-        // turret is child of selected slot.
-        if (selected.transform.childCount == 0)
-            return false;
-        Transform turret = selected.transform.GetChild(0).transform;
-        return GameManager.Instance.units.Exists(turret);
-    }
 
     internal void RemoveMoney(int v) {
         buildingManager.cash -= v;
@@ -26,13 +17,9 @@ public class BuildingManagerAccess {
     internal void AddMoney(int money) {
         buildingManager.cash += money;
     }
-
-    public bool TurretExists(Transform turret) {
-        return GameManager.Instance.units.Exists(turret);
-    }
+    
 
     internal void Select(SelectableObject selectableObject) {
-        if (!buildingManager.turrets.IsTaken(selectableObject.transform.position))
         buildingManager.OnSelectItem(selectableObject.transform);
     }
 
@@ -54,7 +41,12 @@ public class BuildingManagerAccess {
         }
 
         string curUI = GameManager.Instance.ui.activeUI;
-        GameManager.Instance.ui.ChangeUI(curUI + "_builtTower", SelectableObject.lastSelected.transform.position);
+        GameManager.Instance.ui.Close();
+        // closes ui
+        // GameManager.Instance.ui.ChangeUI(curUI + "_builtTower", SelectableObject.lastSelected.transform.position);
     }
-    
+
+    internal Transform GetTurret(SelectableObject selected) {
+        return buildingManager.turrets.GetTurret(selected.transform.position);
+    }
 }
