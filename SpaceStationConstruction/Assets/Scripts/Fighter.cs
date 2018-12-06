@@ -8,7 +8,9 @@ interface IAiTracking {
 
 [System.Serializable]
 public class KillReward {
-    public int reward = 30;
+    //[System.Obsolete("Used per quest rewards instead. Better fine tunning.")]
+    // experience is still an option.
+    //public int reward = 30;
 }
 
 public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
@@ -44,7 +46,7 @@ public class Fighter:MonoBehaviour, IDestructible, IAiTracking {
     }
 
     public void OnObjDestroyed() {
-        GameManager.Instance.building.AddMoney(data.death.reward);
+        //GameManager.Instance.building.AddMoney(data.death.reward);
         GameManager.Instance.targeting.DeRegister(this);
     }
 

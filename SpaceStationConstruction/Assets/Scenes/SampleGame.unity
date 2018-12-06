@@ -1561,6 +1561,7 @@ GameObject:
   - component: {fileID: 889106655}
   - component: {fileID: 889106656}
   - component: {fileID: 889106657}
+  - component: {fileID: 889106658}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1606,7 +1607,7 @@ MonoBehaviour:
     - {fileID: 1388486704}
     - {fileID: 2066483847}
     - {fileID: 492146216}
-  spawnLib: {fileID: 11400000, guid: 817374292bc1ba24fad617e11a492263, type: 2}
+  spawnLib: {fileID: 889106658}
   turretManager:
     turrets: []
   combat: {fileID: 889106657}
@@ -1699,6 +1700,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bd582af42371c46b70ba1bca2127eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &889106658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 889106649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c3bad6a73a36048a248e8e5483d370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lib: {fileID: 11400000, guid: 817374292bc1ba24fad617e11a492263, type: 2}
+  templateRWMode: 0
 --- !u!1 &892349095
 GameObject:
   m_ObjectHideFlags: 0

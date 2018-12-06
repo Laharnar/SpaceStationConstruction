@@ -13,7 +13,7 @@ public class GameManager:MonoBehaviour {
     public TurretHandling turretBehaviour;
     public FighterHandling fighterBehaviour;
     public Station station;
-    public PrefabLib spawnLib;
+    public PrefabSpawnController spawnLib;
     public TurretList turretManager;
     public CombatMessageManager combat;
 
@@ -44,6 +44,11 @@ public class GameManager:MonoBehaviour {
                     if (!instance.combat) {
                         Debug.Log("Adding CombatMessageManager manually.");
                         instance.combat = instance.gameObject.AddComponent<CombatMessageManager>();
+                    }
+                    instance.spawnLib = GameObject.FindObjectOfType<PrefabSpawnController>();
+                    if (!instance.spawnLib) {
+                        Debug.Log("Adding PrefabSpawnController manually.");
+                        instance.spawnLib = instance.gameObject.AddComponent<PrefabSpawnController>();
                     }
                 }
             }

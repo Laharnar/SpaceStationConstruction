@@ -3,6 +3,15 @@ using UnityEngine;
 
 public class LoadJsonFiles {
 
+    // TODO Note: some parts of code, don't use this yet.
+    public const string JSONPATH = "Content/";
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <param name="pathDotJson">x.json</param>
+    /// <param name="append"></param>
     public static void SaveSerializableToJson(object obj, string pathDotJson, bool append) {
         Debug.Log("Save json object "+obj.GetType());
         string s = JsonUtility.ToJson(obj, true);

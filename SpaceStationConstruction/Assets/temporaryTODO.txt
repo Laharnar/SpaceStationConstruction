@@ -42,6 +42,7 @@ test spawning of units, in a large square wave ok
     then add instalations(build ok +effect skip)
     add science tree with 5 items -- optional skip
     add save progress skip
+	
 
 how do i build an addon? maybe have sprite settings, and effect.
 effects aren't defined atm, and are optional.
@@ -74,3 +75,7 @@ artist.
 
 4. cycle
 look into publishing and releases... ads.
+
+
+DONE - cycle 3
+6.12 json exporter/importer for figher data.

@@ -1,0 +1,76 @@
+{
+    "data": [
+        {
+            "description": "drone",
+            "stats": {
+                "alliance": 0,
+                "shields": 0,
+                "health": 1,
+                "armor": 0.0
+            },
+            "flySpeed": 12.0,
+            "rotationSpeed": 2.0,
+            "shooting": {
+                "bulletPref": {
+                    "instanceID": 11904
+                },
+                "fireRate": 1.5
+            },
+            "death": {}
+        },
+        {
+            "description": "fighter",
+            "stats": {
+                "alliance": 0,
+                "shields": 4,
+                "health": 8,
+                "armor": 0.5
+            },
+            "flySpeed": 6.0,
+            "rotationSpeed": 2.0,
+            "shooting": {
+                "bulletPref": {
+                    "instanceID": 11904
+                },
+                "fireRate": 0.699999988079071
+            },
+            "death": {}
+        },
+        {
+            "description": "mediu",
+            "stats": {
+                "alliance": 0,
+                "shields": 0,
+                "health": 10,
+                "armor": 0.25
+            },
+            "flySpeed": 6.0,
+            "rotationSpeed": 2.0,
+            "shooting": {
+                "bulletPref": {
+                    "instanceID": 11904
+                },
+                "fireRate": 0.699999988079071
+            },
+            "death": {}
+        },
+        {
+            "description": "mothership",
+            "stats": {
+                "alliance": 0,
+                "shields": 5,
+                "health": 20,
+                "armor": 0.25
+            },
+            "flySpeed": 4.0,
+            "rotationSpeed": 0.20000000298023225,
+            "shooting": {
+                "bulletPref": {
+                    "instanceID": 11898
+                },
+                "fireRate": 0.6000000238418579
+            },
+            "death": {}
+        }
+    ]
+}
