@@ -3,16 +3,15 @@
 [System.Serializable]
 public class TurretList {
 
-    public List<Turret> turrets = new List<Turret>();
+    public List<TurretController> turrets = new List<TurretController>();
 
-    public void RegisterTurret(Turret t) {
+    public void RegisterTurret(TurretController t) {
         turrets.Add(t);
     }
 
-    public void TryChangeTurret(Turret turret, int requiredType) {
-        if (turret.modes.CorrectType(requiredType)) {
+    public void ChangeTurretMode(TurretController turret, int expectedTurretType) {
+        if (turret.modes.GetTurretType(turret)== expectedTurretType)
             turret.modes.ToggleMode(turret);
-        }
     }
 
 }

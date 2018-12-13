@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 public class GameManager:MonoBehaviour {
 
     static GameManager instance;
@@ -16,6 +17,7 @@ public class GameManager:MonoBehaviour {
     public PrefabSpawnController spawnLib;
     public TurretList turretManager;
     public CombatMessageManager combat;
+    public GlobalTurretModeControl globalModeManager;
 
     public static float EnemySpawnRate { get { return GameManager.Instance.questBehaviour.enemySpawnRate; } }
 

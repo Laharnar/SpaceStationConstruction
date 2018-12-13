@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+
+// TODO : prep turret script for different kind of behaviours and different kinds of guns
+// define how it should work
 public class Turret:MonoBehaviour, IAiTracking {
     public GunInfo gun;
     public TurretData data;
-
-    public TurretStates modes;
+    public int turretType = 0;
 
     Coroutine behaviour;
 
     Vector2 lastAim;
     public string aiState { get; set; }
-
-    private void Awake() {
-        GameManager.Instance.turretManager.RegisterTurret(this);
-        modes.Init(this);
-    }
 
     private void Start() {
         StartCoroutine(TurretBehaviour1());

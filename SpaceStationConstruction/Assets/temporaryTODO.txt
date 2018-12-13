@@ -1,4 +1,26 @@
-﻿goal 27.10.2018-_____ ------------- full gameplay.
+﻿13.12.2018 ---- abandoned
+Arhitecture: GameManager > global access > local access
+you can access global controllers from local ones. otherwise the structure goes over game manager and only down.
+
+Conclusion:
+Idea relies too much on balance of waves compared to current turrets. Too much content and
+balance is required to pull it off in short term.
+
+Arhitecture can be improved to be more accessible. perhaps multiple large area libraries.
+It would also allow you to better have your own engine set up. I believe it's slowly getting to a point where it's going to be reusable for long projects.
+
+Time managment: too much spent on it without results. should be implemented in 3 days, tested and built from that.
+
+Art: converstion from 2d to 3d based on only having 3d artist was a mistake, as was bringing him in before having complete playable game ready.
+
+Sound: still non existstant.
+Ui: unpolished. not tested enough to give a good comment.
+Main interactible elements: turrets. scaling from basic shooting to upgrades requires some annoying restructuring of data. considerate separate data. Raycasting and movement can be considered as a seprate layer.
+
+Feels bad not to finish it to releasable state. And to mess it up with that artist. And the actuall amount of work that was put in.
+
+
+goal 27.10.2018-_____ ------------- full gameplay.
 
 goal 27.10.2018-_____ ------------- functional prototype2
 play through the whole thing with quests, and functioning
@@ -26,6 +48,20 @@ build different turrets
 (singular, mixed)chain detonation by size/homing(detonates/disables engines)
 (laser)(piercing)antiarmor /antishield pierce).
 )
+3 turets v2
+groups/single
+armor/shields
+deflect bullets/aoe emp(disable ships)
+
+Multiple turret structure:
+Turret root > modes > options and upgrades > sprites and behaviours
+animated mode swap > swap to animation mode > swap to target turret.
+
+global: seprate spawn points, multiple barrels. seprate fire rates.
+
+turret mode : x
+upgrades? just another mode. node build path tree .SwapMode command
+
 
 Todo:
 to 3d
