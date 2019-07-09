@@ -1108,7 +1108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun:
-    spawnPoint: {fileID: 4283603942094256}
+    spawnPoint: {fileID: 4826783747042720}
   data:
     bulletPref: {fileID: 4982134147376924, guid: 030d931d4b5d9384da4cee04887e5bbd,
       type: 2}
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun:
-    spawnPoint: {fileID: 4283603942094256}
+    spawnPoint: {fileID: 4374224358009876}
   data:
     bulletPref: {fileID: 4982134147376924, guid: 030d931d4b5d9384da4cee04887e5bbd,
       type: 2}
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun:
-    spawnPoint: {fileID: 4283603942094256}
+    spawnPoint: {fileID: 4070220147702758}
   data:
     bulletPref: {fileID: 4982134147376924, guid: 030d931d4b5d9384da4cee04887e5bbd,
       type: 2}
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun:
-    spawnPoint: {fileID: 4283603942094256}
+    spawnPoint: {fileID: 4079815199595524}
   data:
     bulletPref: {fileID: 4982134147376924, guid: 030d931d4b5d9384da4cee04887e5bbd,
       type: 2}
@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun:
-    spawnPoint: {fileID: 4283603942094256}
+    spawnPoint: {fileID: 4573474992123068}
   data:
     bulletPref: {fileID: 4982134147376924, guid: 030d931d4b5d9384da4cee04887e5bbd,
       type: 2}
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun:
-    spawnPoint: {fileID: 4283603942094256}
+    spawnPoint: {fileID: 4895617750477954}
   data:
     bulletPref: {fileID: 4982134147376924, guid: 030d931d4b5d9384da4cee04887e5bbd,
       type: 2}
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun:
-    spawnPoint: {fileID: 4283603942094256}
+    spawnPoint: {fileID: 4485596700872796}
   data:
     bulletPref: {fileID: 4982134147376924, guid: 030d931d4b5d9384da4cee04887e5bbd,
       type: 2}
@@ -1247,7 +1247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun:
-    spawnPoint: {fileID: 4283603942094256}
+    spawnPoint: {fileID: 4716626111327180}
   data:
     bulletPref: {fileID: 4982134147376924, guid: 030d931d4b5d9384da4cee04887e5bbd,
       type: 2}
